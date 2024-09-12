@@ -23,6 +23,10 @@ requests in per second.
 -  Postman for API testing
 -  Nginx (Reverse proxy server)
 
+### Deployment on AWS cloud
+
+I deployed the task management application on the AWS cloud(EC2 Instance). Please use the 13.127.161.117 public IP address to test the API's
+
 ### Setup
 
 #### Installation
