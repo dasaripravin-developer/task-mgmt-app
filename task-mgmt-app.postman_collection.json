@@ -7,6 +7,237 @@
 	},
 	"item": [
 		{
+			"name": "AWS",
+			"item": [
+				{
+					"name": "register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"firstName\": \"pravin\",\n    \"lastName\": \"dasari\",\n    \"username\": \"dasaripravin1\",\n    \"password\": \"12345678\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://13.127.161.117/register",
+							"protocol": "http",
+							"host": [
+								"13",
+								"127",
+								"161",
+								"117"
+							],
+							"path": [
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"dasaripravin1\",\n    \"password\": \"12345678\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://13.127.161.117/login",
+							"protocol": "http",
+							"host": [
+								"13",
+								"127",
+								"161",
+								"117"
+							],
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add task",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjMsInVzZXJuYW1lIjoiZGFzYXJpcHJhdmluMSIsImlhdCI6MTcyNjEyNDAxNCwiZXhwIjoxNzI2MTI3NjE0fQ.XHS1ChutmM1VbvN5g0Xdi9Tx9PCBRVys-kUuEiK_wSo",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"one\",\n    \"description\": \"this is one\",\n    \"dueDate\": \"09-11-2024\",\n    \"userId\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://13.127.161.117/task",
+							"protocol": "http",
+							"host": [
+								"13",
+								"127",
+								"161",
+								"117"
+							],
+							"path": [
+								"task"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get task by id",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInVzZXJuYW1lIjoiZGFzYXJpcHJhdmluMSIsImlhdCI6MTcyNjEyNDU3NSwiZXhwIjoxNzI2MTI4MTc1fQ.uCleJY_pT6VVmwgcOmGQiJkI74sNkruWiZfEZE3Cfrc",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://13.127.161.117/task/1",
+							"protocol": "http",
+							"host": [
+								"13",
+								"127",
+								"161",
+								"117"
+							],
+							"path": [
+								"task",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update task",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInVzZXJuYW1lIjoiZGFzYXJpcHJhdmluMSIsImlhdCI6MTcyNjEyNDU3NSwiZXhwIjoxNzI2MTI4MTc1fQ.uCleJY_pT6VVmwgcOmGQiJkI74sNkruWiZfEZE3Cfrc",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"status\": \"In Progress\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://13.127.161.117/task/1",
+							"protocol": "http",
+							"host": [
+								"13",
+								"127",
+								"161",
+								"117"
+							],
+							"path": [
+								"task",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete task",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInVzZXJuYW1lIjoiZGFzYXJpcHJhdmluMSIsImlhdCI6MTcyNjEyNDU3NSwiZXhwIjoxNzI2MTI4MTc1fQ.uCleJY_pT6VVmwgcOmGQiJkI74sNkruWiZfEZE3Cfrc",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://13.127.161.117/task/1",
+							"protocol": "http",
+							"host": [
+								"13",
+								"127",
+								"161",
+								"117"
+							],
+							"path": [
+								"task",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get task with pagination",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInVzZXJuYW1lIjoiZGFzYXJpcHJhdmluMSIsImlhdCI6MTcyNjEyNDU3NSwiZXhwIjoxNzI2MTI4MTc1fQ.uCleJY_pT6VVmwgcOmGQiJkI74sNkruWiZfEZE3Cfrc",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://13.127.161.117/task?page=2&limit2",
+							"protocol": "http",
+							"host": [
+								"13",
+								"127",
+								"161",
+								"117"
+							],
+							"path": [
+								"task"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "2"
+								},
+								{
+									"key": "limit2",
+									"value": null
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
 			"name": "register",
 			"request": {
 				"method": "POST",

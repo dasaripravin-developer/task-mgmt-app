@@ -16,7 +16,10 @@ export async function getTaskById(request, response) {
    try {
       logger.info(`controller - task - getTaskById - `);
       const task = await taskService.getTaskById(request.params.id, request.userData);
-      response.status(200).send(task);
+      if(task)
+         response.status(200).send(task);
+      else
+         response.status(200).send({message: "task not found"});
    } catch (error) {
       logger.error(`controller - user - getTaskById - Exception - ${error}`);
       response.status(500).json({ message: error.message });
