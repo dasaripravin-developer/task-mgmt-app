@@ -1,10 +1,10 @@
-### Task Management System API
+## Task Management System API
 
-## Overview
+### Overview
 
 This project is a scalable RESTful API built with Node.js and MongoDB for managing tasks with JWT-based user authentication and Redis caching. The API supports task CRUD operations, user registration, and login. Caching is implemented for retrieving task lists, and invalidation is handled for create, update, and delete operations.
 
-##Features
+### Features
 
 -  User: registration and login
 -  JWT Authentication: Secure endpoints using JWT tokens.
@@ -15,7 +15,7 @@ requests in per second.
 -  Cloud Deployment: Server deployed on AWS cloud (EC2 Instance)
 - Scalability: It is scalable application. We can do horizontal scale. Will do load balancing using nginx server.
 
-##Requirements
+### Requirements
 
 -  Node.js (v16+)
 -  MongoDB (v4.x+)
@@ -23,9 +23,9 @@ requests in per second.
 -  Postman for API testing
 -  Nginx (Reverse proxy server)
 
-###Setup
+### Setup
 
-##Installation
+#### Installation
 
 1. Clone the repository:
 
@@ -52,7 +52,7 @@ JWT_SECRET=<secret_key>
 REDIS_HOST=<redis_host>
 REDIS_PORT=<redis_port>
 
-#Example
+#### Example
 
 MONGO_HOST=mongo.hycdymo.mongodb.net
 MONGO_QUERY_PARAMETERS=?retryWrites=true&w=majority&appName=mongo
@@ -101,13 +101,13 @@ The server will be running on http://localhost:3000
 
 You can test the below API's by importing postman json file. find the task-mgmt-app.postman_collection.json file in repository, Import the same file in postman. You will get all API test.
 
-###API Documentation
+### API Documentation
 
 You can interact with the API using Postman once the server is running.
 
-##User Authentication
+#### User Authentication
 
-#Register a New User
+#### Register a New User
 
 -  URL: /register
 -  Method: POST
@@ -135,7 +135,7 @@ You can interact with the API using Postman once the server is running.
 }
 ```
 
-#User Login
+#### User Login
 
 -  URL: /login
 -  Method: POST
@@ -157,11 +157,11 @@ You can interact with the API using Postman once the server is running.
 }
 ```
 
-##Task Management
+### Task Management
 
 All task operations are JWT protected and require a valid token in the Authorization header.
 
-#Create a Task
+#### Create a Task
 
 -  URL: /task
 -  Method: POST
@@ -192,7 +192,7 @@ All task operations are JWT protected and require a valid token in the Authoriza
 }
 ```
 
-#Get All Tasks (With Redis Caching)
+#### Get All Tasks (With Redis Caching)
 
 -  URL: /task
 -  Method: GET
@@ -230,7 +230,7 @@ All task operations are JWT protected and require a valid token in the Authoriza
 ]
 ```
 
-#Get a Task by ID
+#### Get a Task by ID
 
 -  URL: /task/:id
 -  Method: GET
@@ -290,7 +290,7 @@ All task operations are JWT protected and require a valid token in the Authoriza
 }
 ```
 
-#Delete a Task
+#### Delete a Task
 
 - URL: /tasks/:id
 - Method: DELETE
@@ -311,11 +311,11 @@ All task operations are JWT protected and require a valid token in the Authoriza
 }
 ```
 
-##Caching
+### Caching
 
 Redis caching is implemented for the GET /task /task/:id endpoint. The cache is invalidated automatically whenever a task is created, updated, or deleted to ensure consistency.
 
-##Error Handling
+### Error Handling
 
 The API includes error handling for:
 
