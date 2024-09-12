@@ -1,0 +1,243 @@
+{
+	"info": {
+		"_postman_id": "44561a99-bf61-446a-9fd3-8330878e251b",
+		"name": "task-mgmt-app",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "30417568"
+	},
+	"item": [
+		{
+			"name": "register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"firstName\": \"pravin\",\n    \"lastName\": \"dasari\",\n    \"username\": \"dasaripravin2\",\n    \"password\": \"12345678\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://0.0.0.0:3000/register",
+					"protocol": "http",
+					"host": [
+						"0",
+						"0",
+						"0",
+						"0"
+					],
+					"port": "3000",
+					"path": [
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\": \"dasaripravin1\",\n    \"password\": \"12345678\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://0.0.0.0:3000/login",
+					"protocol": "http",
+					"host": [
+						"0",
+						"0",
+						"0",
+						"0"
+					],
+					"port": "3000",
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "add task",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2ZTE0N2MxMGIzZmUyN2U3MjViYTVhZiIsInVzZXJuYW1lIjoiZGFzYXJpcHJhdmluMSIsImlhdCI6MTcyNjA0MjIxMCwiZXhwIjoxNzI2MDQ1ODEwfQ.UOLyxinz82E9Tunkc2Bf-zGClekM-0fGgx09JZPcLDs",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"title\": \"one\",\n    \"description\": \"this is one\",\n    \"dueDate\": \"09-11-2024\",\n    \"userId\": 1\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://0.0.0.0:3000/task",
+					"protocol": "http",
+					"host": [
+						"0",
+						"0",
+						"0",
+						"0"
+					],
+					"port": "3000",
+					"path": [
+						"task"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get task by id",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2ZTE0N2MxMGIzZmUyN2U3MjViYTVhZiIsInVzZXJuYW1lIjoiZGFzYXJpcHJhdmluMSIsImlhdCI6MTcyNjA0MjIxMCwiZXhwIjoxNzI2MDQ1ODEwfQ.UOLyxinz82E9Tunkc2Bf-zGClekM-0fGgx09JZPcLDs",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://0.0.0.0:3000/task/6",
+					"protocol": "http",
+					"host": [
+						"0",
+						"0",
+						"0",
+						"0"
+					],
+					"port": "3000",
+					"path": [
+						"task",
+						"6"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update task by id",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2ZTE0N2MxMGIzZmUyN2U3MjViYTVhZiIsInVzZXJuYW1lIjoiZGFzYXJpcHJhdmluMSIsImlhdCI6MTcyNjA0MjIxMCwiZXhwIjoxNzI2MDQ1ODEwfQ.UOLyxinz82E9Tunkc2Bf-zGClekM-0fGgx09JZPcLDs",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"status\": \"In Progress\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://0.0.0.0:3000/task/6",
+					"protocol": "http",
+					"host": [
+						"0",
+						"0",
+						"0",
+						"0"
+					],
+					"port": "3000",
+					"path": [
+						"task",
+						"6"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete task by id",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2ZTE0N2MxMGIzZmUyN2U3MjViYTVhZiIsInVzZXJuYW1lIjoiZGFzYXJpcHJhdmluMSIsImlhdCI6MTcyNjA0MjIxMCwiZXhwIjoxNzI2MDQ1ODEwfQ.UOLyxinz82E9Tunkc2Bf-zGClekM-0fGgx09JZPcLDs",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://0.0.0.0:3000/task/5",
+					"protocol": "http",
+					"host": [
+						"0",
+						"0",
+						"0",
+						"0"
+					],
+					"port": "3000",
+					"path": [
+						"task",
+						"5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get all task with pagination",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInVzZXJuYW1lIjoiZGFzYXJpcHJhdmluMSIsImlhdCI6MTcyNjA0NzgwNiwiZXhwIjoxNzI2MDUxNDA2fQ.kD4_vSFqXPk0LL4LVyZZqo-YmCDD35D1YhgXVVFDcQs",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://0.0.0.0:3000/task?page=2&limit2",
+					"protocol": "http",
+					"host": [
+						"0",
+						"0",
+						"0",
+						"0"
+					],
+					"port": "3000",
+					"path": [
+						"task"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "2"
+						},
+						{
+							"key": "limit2",
+							"value": null
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
