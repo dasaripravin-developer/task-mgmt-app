@@ -74,13 +74,11 @@ async function getTask(userData, query) {
    return new Promise(async (resolve, reject) => {
       try {
          logger.info(`services - task - getTask - ${JSON.stringify(userData)}`);
-         //     let tasks = await getAllFieldByKey(`user:${userData.userId}`);
          let keys = await getKeys(`user:${userData.userId}:*`);
+         if (keys && keys.length == 0) return resolve();
          let tasks = await mget(keys);
          if (tasks) {
             logger.info(`services - task - getTask - got task from redis - ${JSON.stringify(tasks)}`);
-            //   const taskArray = Object.values(tasks).map((task) => JSON.parse(task));
-            //   tasks = await tasks.map((val) => JSON.parse(val));
             resolve(tasks.slice((query.page - 1) * query.limit, query.page * query.limit));
          } else {
             logger.info(`services - task - getTask - task not found in redis`);
@@ -106,48 +104,5 @@ async function getTask(userData, query) {
    });
 }
 
-/* // Get all tasks with pagination
-router.get('/', async (req, res) => {
-  const { page = 1, limit = 10 } = req.query;
-
-  // Get tasks from Redis cache
-  redisClient.hgetall('tasks', (err, tasks) => {
-    if (err) {
-      console.error('Redis HGETALL error:', err);
-      return res.status(500).json({ message: 'Internal server error' });
-    }
-
-    if (tasks) {
-      // Convert tasks to an array and paginate
-      const taskArray = Object.values(tasks).map(task => JSON.parse(task));
-      const paginatedTasks = taskArray.slice((page - 1) * limit, page * limit);
-
-      return res.json(paginatedTasks);
-    } else {
-      // Fetch tasks from MongoDB if not found in Redis
-      Task.find()
-        .skip((page - 1) * limit)
-        .limit(parseInt(limit))
-        .exec((err, tasks) => {
-          if (err) {
-            return res.status(500).json({ message: 'Internal server error' });
-          }
-          
-          // Cache tasks in Redis
-          tasks.forEach(task => {
-            redisClient.hset('tasks', task._id.toString(), JSON.stringify(task), (err, reply) => {
-              if (err) {
-                console.error('Redis HSET error:', err);
-              } else {
-                console.log('Cached task in Redis:', reply);
-              }
-            });
-          });
-
-          res.json(tasks);
-        });
-    }
-  });
-}); */
 
 export default { addTask, getTaskById, updateTaskById, deleteTaskById, getTask };
