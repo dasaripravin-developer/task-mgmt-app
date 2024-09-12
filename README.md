@@ -255,7 +255,7 @@ All task operations are JWT protected and require a valid token in the Authoriza
 }
 ```
 
-#Update a Task
+#### Update a Task
 
 - URL: /task/:id
 - Method: PUT
