@@ -1,17 +1,18 @@
 import Joi from "joi";
 
 export const createTask = Joi.object({
-     title: Joi.string().required(),
-     description: Joi.string().required(),
-     status: Joi.string().optional(),
-     dueDate: Joi.date().required(),
+   title: Joi.string().required(),
+   description: Joi.string().required(),
+   status: Joi.string().optional(),
+   dueDate: Joi.date().required(),
+   userId: Joi.number().required(),
 });
 
 export const updateTask = Joi.object({
-     title: Joi.string().optional(),
-     description: Joi.string().optional(),
-     status: Joi.string().optional(),
-     dueDate: Joi.date().optional(),
+   title: Joi.string().optional(),
+   description: Joi.string().optional(),
+   status: Joi.string().optional(),
+   dueDate: Joi.date().optional(),
 });
 
 /* 
